@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.JieyongjiluDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.JieyongjiluEntity" id="jieyongjiluMap">
+        <result property="shebeimingcheng" column="shebeimingcheng"/>
+        <result property="shebeitupian" column="shebeitupian"/>
+        <result property="shebeishuliang" column="shebeishuliang"/>
+        <result property="caozuoriqi" column="caozuoriqi"/>
+        <result property="xinxishuoming" column="xinxishuoming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.JieyongjiluVO" >
+		SELECT * FROM jieyongjilu  jieyongjilu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.JieyongjiluVO" >
+		SELECT  jieyongjilu.* FROM jieyongjilu  jieyongjilu
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.JieyongjiluView" >
+
+		SELECT  jieyongjilu.* FROM jieyongjilu  jieyongjilu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.JieyongjiluView" >
+		SELECT * FROM jieyongjilu  jieyongjilu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
